@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #111;
+            color: #eee;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            background-color: #222;
+        }
+        .nav-bar button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .nav-bar button.active {
+            background-color: #666;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .tab-content.active {
+            display: block;
+        }
+        a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Joshua Hinkle</h1>
+        <p>Showcasing my work, Steam published with chumps on forefront. 2D Art and Design Focus Portfolio. Working as Project Co-lead</p>
+    </header>
+    
+    <div class="nav-bar">
+        <button class="tab-button active" onclick="openTab(event, 'home')">Home</button>
+        <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+        <button class="tab-button" onclick="openTab(event, 'artstation')">ArtStation</button>
+    </div>
+    
+    <main>
+        <section id="home" class="tab-content active">
+            <h2>Welcome to My Portfolio</h2>
+            <p>Introduction</p>
+        </section>
+        
+        <section id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Chumps Chained</h3>
+                <p>Chumps Chained, link to steam and short trailer</p>
+            </div>
+            <div class="project">
+                <h3>Dwarf Trail</h3>
+                <p>Dwarf Trail, link to itch and short trailer</p>
+            </div>
+            <div class="project">
+                <h3>Rootin Tootin Guns and Shootin</h3>
+                <p>Rootin Tootin Guns and Shootin, VR Game with video demo</p>
+            </div>
+            <div class="project">
+              <h3>Uddar Chaos</h3>
+              <p>Game Jam game</p>
+          </div>
+        </section>
+        
+        <section id="artstation" class="tab-content">
+            <h2>ArtStation</h2>
+            <p>Check out my artwork on <a href="https://www.artstation.com/" target="_blank">ArtStation</a>.</p>
+        </section>
+    </main>
+    
+    <script>
+        function openTab(event, tabId) {
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
