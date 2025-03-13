@@ -20,7 +20,6 @@
             margin: 0;
             padding: 0;
         }
-        /* Banner Images */
         .banner {
             width: 100%;
             height: 200px;
@@ -31,17 +30,17 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            padding: 20px; /* Increased padding for height */
+            padding: 20px;
             background-color: #222;
         }
         .nav-bar button {
             background-color: #444;
             color: white;
             border: none;
-            padding: 15px 30px; /* Larger buttons */
+            padding: 15px 30px;
             font-size: 18px;
             cursor: pointer;
-            width: 150px; /* Wider buttons */
+            width: 150px;
         }
         .nav-bar button.active {
             background-color: #666;
@@ -92,14 +91,14 @@
     </style>
 </head>
 <body>
-    <!-- Banner Images for Home and ArtStation -->
+    <!-- Banner Images for Home and Projects -->
     <img id="home-banner" class="banner" src="images/Banner1.png" alt="Home Banner">
-    <img id="artstation-banner" class="banner" src="images/Banner3.png" alt="ArtStation Banner" style="display: none;">
+    <img id="projects-banner" class="banner" src="images/Banner3.png" alt="Projects Banner" style="display: none;">
     
     <div class="nav-bar">
         <button class="tab-button active" onclick="openTab(event, 'home')">Home</button>
         <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
-        <button class="tab-button" onclick="openTab(event, 'artstation')">ArtStation</button>
+        <button class="tab-button" onclick="window.open('https://www.artstation.com/joshuathehinkle', '_blank')">ArtStation</button>
     </div>
     
     <div id="title-home" class="title-section">
@@ -144,11 +143,6 @@
                 </div>
             </div>
         </section>
-        
-        <section id="artstation" class="tab-content">
-            <h2>ArtStation</h2>
-            <p>Check out my artwork on <a href="https://www.artstation.com/joshuathehinkle" target="_blank">ArtStation</a>.</p>
-        </section>
     </main>
     
     <script>
@@ -160,10 +154,9 @@
             event.currentTarget.classList.add('active');
             
             document.getElementById('title-home').style.display = tabId === 'home' ? 'block' : 'none';
-
-            // Toggle banners based on active tab
+            
             document.getElementById('home-banner').style.display = tabId === 'home' ? 'block' : 'none';
-            document.getElementById('artstation-banner').style.display = tabId === 'artstation' ? 'block' : 'none';
+            document.getElementById('projects-banner').style.display = tabId === 'projects' ? 'block' : 'none';
         }
     </script>
 </body>
